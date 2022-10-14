@@ -1,9 +1,18 @@
-﻿ <div class="navbar">
+﻿@inject NavigationManager Navigation
+
+<div class="navbar">
       <div class="navContainer">
-        <span class="logo">Amoc booking</span>
+        <span class="logo" @onclick="NavigateToHomePage">Amoc booking</span>
         <div class="navItems">
           <button class="navButton">Register</button>
           <button class="navButton">Login</button>
         </div>
       </div>
   </div>
+
+@code {
+    private void NavigateToHomePage()
+    {
+        Navigation.NavigateTo("/");
+    }
+}
