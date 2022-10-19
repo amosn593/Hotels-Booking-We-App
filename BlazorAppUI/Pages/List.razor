@@ -6,6 +6,9 @@
 
 <NavMenu/>
 
+<TopNavBar ShowSearch=false/>
+
+
 <div class="listContainer">
         <div class="listWrapper">
           <div class="listSearch">
@@ -79,10 +82,13 @@
               <SearchItem/>
           </div>
         </div>
-      </div>
+        
+</div>
+
 
 
 @code {
+
     private void NavigateToHotelsPage()
     {
         Navigation.NavigateTo("hotels");

@@ -24,6 +24,9 @@
                 <span>Airport taxis</span>
             </div>
         </div>
+
+        @if(ShowSearch == true){
+
         <h1 class="headerTitle">
               A lifetime of discounts? It's Genius.
          </h1>
@@ -43,11 +46,70 @@
              </div>
              <div class="headerSearchItem">
                   <i class="fas fa-calendar-days headerIcon"></i>
-                 <span class="headerSearchText">date to date</span>
+                 <span class="headerSearchText">
+                      <SfDateRangePicker TValue="DateTime?"  class="date" ></SfDateRangePicker>
+                 </span>
+                  
              </div>
              <div class="headerSearchItem">
                   <i class="fas fa-person headerIcon"></i>
-                  <span class="headerSearchText"> 2 adults 2 children 1 room</span>
+                  <span class="headerSearchText" @onclick="ToggleShowPeople">
+                        1 adults 0 children 1 room
+                   </span>
+
+                  @if(ShowPeople == true){
+
+                  
+                  <div class="options">
+                    <div class="optionItem">
+                      <span class="optionText">Adult</span>
+                      <div class="optionCounter">
+                        <button class="optionCounterButton">
+                          -
+                        </button>
+                        <span class="optionCounterNumber">
+                          1
+                        </span>
+                        <button class="optionCounterButton">
+                          +
+                        </button>
+                      </div>
+                    </div>
+                    <div class="optionItem">
+                      <span class="optionText">Children</span>
+                      <div class="optionCounter">
+                        <button class="optionCounterButton">
+                          -
+                        </button>
+                        <span class="optionCounterNumber">
+                          0
+                        </span>
+                        <button class="optionCounterButton">
+                          +
+                        </button>
+                      </div>
+                    </div>
+                    <div class="optionItem">
+                      <span class="optionText">Room</span>
+                      <div class="optionCounter">
+                        <button class="optionCounterButton">
+                                                 
+                          -
+                        </button>
+                        <span class="optionCounterNumber">
+                          1
+                        </span>
+                        <button
+                          class="optionCounterButton"
+                          
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                    }
              </div>
              <div class="headerSearchItem">
                 <button class="headerBtn" @onclick="NavigateToHotelsPage">
@@ -55,10 +117,26 @@
                 </button>
               </div>
          </div>
+
+         }
     </div>
+   
 </div>
 
 @code {
+
+         
+
+    [Parameter]
+    public bool ShowSearch { get; set; } = true;
+
+    private bool ShowPeople { get; set; } = false;
+              
+
+    private void ToggleShowPeople(){
+        ShowPeople = !ShowPeople;
+    }
+
     private void NavigateToHotelsPage()
     {
         Navigation.NavigateTo("hotels");
