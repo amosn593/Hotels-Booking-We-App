@@ -47,7 +47,7 @@
              <div class="headerSearchItem">
                   <i class="fas fa-calendar-days headerIcon"></i>
                  <span class="headerSearchText">
-                      <SfDateRangePicker TValue="DateTime?"  class="date" ></SfDateRangePicker>
+                          <SfDateRangePicker TValue="DateTime?"  class="date"  ></SfDateRangePicker>
                  </span>
                   
              </div>
@@ -125,14 +125,14 @@
 
 @code {
 
-         
+
 
     [Parameter]
     public bool ShowSearch { get; set; } = true;
 
     private bool ShowPeople { get; set; } = false;
-              
 
+   
     private void ToggleShowPeople(){
         ShowPeople = !ShowPeople;
     }

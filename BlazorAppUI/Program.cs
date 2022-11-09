@@ -8,7 +8,9 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddSyncfusionBlazor();
 
 Syncfusion.Licensing.SyncfusionLicenseProvider
-    .RegisterLicense(builder.Configuration["SyncfusionBlazor"]);
+    .RegisterLicense(
+    "NzQyODg3QDMyMzAyZTMzMmUzMERrWjZiUmxGUW45YmlkRVY5emk1akVJUkFpZUtqaktlYlU3NkIrVEsySFU9"
+    );
 
 var app = builder.Build();
 
